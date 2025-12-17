@@ -1,67 +1,54 @@
-import { useState } from "react";
-import logo from "./images/logo_vector.png";
-import avatar from "./images/profile_image.jpg";
+import avatar from "../../images/profile_image.jpg";
 
-function App() {
+function Main() {
   return (
-    <div className="page">
-      <header className="header">
-        <img
-          src={logo}
-          alt="Logotipo Around the U.S."
-          className="logo header__logo"
-        />
+    <main className="content">
+      <section className="profile">
+        <button className="profile__image-button">
+          <img
+            src={avatar}
+            alt="Foto de perfil do usuário"
+            className="profile__image"
+          />
+        </button>
 
-        <hr className="header__line" />
-      </header>
-
-      <main className="content">
-        <section className="profile">
-          <button className="profile__image-button">
-            <img
-              src={avatar}
-              alt="Foto de perfil do usuário"
-              className="profile__image"
-            />
-          </button>
-
-          <div className="profile__info">
-            <h1 className="profile__name">Jacques Cousteau</h1>
-            <button className="profile__edit-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                fill="none"
-              >
-                <path
-                  d="M10 1.32827L2.60377 8.7666L1.28302 7.41936L8.66038 0L10 1.32827ZM0 10L1.96226 9.41177L0.584906 8.08349L0 10Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-
-            <p className="profile__description">Explorador</p>
-          </div>
-
-          <button className="profile__add-button" type="submit">
+        <div className="profile__info">
+          <h1 className="profile__name">Jacques Cousteau</h1>
+          <button className="profile__edit-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 22 22"
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
               fill="none"
             >
               <path
-                d="M22 9.77778H12.2222V0H9.77778V9.77778H0V12.2222H9.77778V22H12.2222V12.2222H22V9.77778Z"
+                d="M10 1.32827L2.60377 8.7666L1.28302 7.41936L8.66038 0L10 1.32827ZM0 10L1.96226 9.41177L0.584906 8.08349L0 10Z"
                 fill="white"
               />
             </svg>
           </button>
-        </section>
 
-        {/* <section className="elements">
+          <p className="profile__description">Explorador</p>
+        </div>
+
+        <button className="profile__add-button" type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+          >
+            <path
+              d="M22 9.77778H12.2222V0H9.77778V9.77778H0V12.2222H9.77778V22H12.2222V12.2222H22V9.77778Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+      </section>
+
+      {/* <section className="elements">
           <template className="elements__template">
             <div className="elements__element">
               <div className="elements__rectangle">
@@ -94,13 +81,8 @@ function App() {
             </div>
           </template>
         </section> */}
-      </main>
-
-      <footer className="footer">
-        <p className="footer__copyright">&copy; 2025 Around The U.S.</p>
-      </footer>
-    </div>
+    </main>
   );
 }
 
-export default App;
+export default Main;
