@@ -1,18 +1,15 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import logo from "./images/logo_vector.png";
+import avatar from "./images/profile_image.jpg";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
+    <div className="page">
       <header className="header">
         <img
-          src="./images/logo_vector.png"
+          src={logo}
           alt="Logotipo Around the U.S."
-          className="header__logo"
+          className="logo header__logo"
         />
 
         <hr className="header__line" />
@@ -22,53 +19,45 @@ function App() {
         <section className="profile">
           <button className="profile__image-button">
             <img
-              src="./images/profile_image.jpg"
-              alt="Foto de perfil de Jacques Cousteau"
+              src={avatar}
+              alt="Foto de perfil do usuário"
               className="profile__image"
             />
           </button>
 
           <div className="profile__info">
             <h1 className="profile__name">Jacques Cousteau</h1>
-            <button className="profile__edit-button profile__edit-button_mod-24px">
-              <img
-                src="./images/edit_button.png"
-                alt="Botão para editar o perfil"
-                className="profile__edit-button-icon"
-              />
-            </button>
-
-            <button className="profile__edit-button profile__edit-button_mod-18px">
-              <img
-                src="./images/edit_button_18px.png"
-                alt="Botão para editar o perfil"
-                className="profile__edit-button-icon"
-              />
+            <button className="profile__edit-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                fill="none"
+              >
+                <path
+                  d="M10 1.32827L2.60377 8.7666L1.28302 7.41936L8.66038 0L10 1.32827ZM0 10L1.96226 9.41177L0.584906 8.08349L0 10Z"
+                  fill="white"
+                />
+              </svg>
             </button>
 
             <p className="profile__description">Explorador</p>
           </div>
 
-          <button
-            className="profile__add-button profile__add-button_mod-150w"
-            type="submit"
-          >
-            <img
-              src="./images/add_button.png"
-              alt="Botão para adicionar ao perfil"
-              className="profile__add-button-icon"
-            />
-          </button>
-
-          <button
-            className="profile__add-button profile__add-button_mod-282w"
-            type="submit"
-          >
-            <img
-              src="./images/add_button_282width.png"
-              alt="Botão para adicionar ao perfil"
-              className="profile__add-button-icon"
-            />
+          <button className="profile__add-button" type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+            >
+              <path
+                d="M22 9.77778H12.2222V0H9.77778V9.77778H0V12.2222H9.77778V22H12.2222V12.2222H22V9.77778Z"
+                fill="white"
+              />
+            </svg>
           </button>
         </section>
 
@@ -110,7 +99,7 @@ function App() {
       <footer className="footer">
         <p className="footer__copyright">&copy; 2025 Around The U.S.</p>
       </footer>
-    </>
+    </div>
   );
 }
 

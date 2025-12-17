@@ -1,0 +1,37 @@
+.header {
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header__logo {
+  margin: 45px 0 41px;
+}
+
+.header__line {
+  width: 99%;
+  border: 1px solid #545454;
+  opacity: 70%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    max-width: 320px;
+  }
+  .header__logo {
+    margin: 28px 0 32px 27px;
+  }
+}
