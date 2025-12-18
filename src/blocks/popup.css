@@ -1,4 +1,4 @@
-/* .cards-popup {
+.popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -6,12 +6,12 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: "Inter", Arial, sans-serif;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cards-popup__container {
+.popup__container {
   max-width: 430px;
   width: 100%;
   background-color: #ffffff;
@@ -19,7 +19,7 @@
   position: relative;
 }
 
-.cards-popup__close-button {
+.popup__close-button {
   width: 40px;
   height: 40px;
   border: none;
@@ -30,29 +30,29 @@
   right: -40px;
 }
 
-.cards-popup__close-button:hover {
+.popup__close-button:hover {
   opacity: 60%;
 }
 
-.cards-popup__form {
+.popup__form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.cards-popup__title {
+.popup__title {
   max-width: 358px;
   width: 100%;
-  padding: 34px 0 54px;
+  padding: 34px 36px 54px;
   font-weight: 900;
   font-size: 24px;
   line-height: 1;
 }
 
-.cards-popup__fieldset {
+.popup__fieldset {
   max-width: 358px;
   width: 100%;
-  height: 27.26px;
+  height: 29px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0;
@@ -61,29 +61,29 @@
   flex-direction: column;
 }
 
-.cards-popup__fieldset:last-of-type {
+.popup__fieldset:last-of-type {
   margin-bottom: 0;
 }
 
-.cards-popup__input {
+.popup__input {
   border: none;
   font-size: 14px;
   line-height: 1;
-  height: 27.26px;
+  height: 29px;
 }
 
-.cards-popup__input-error_active {
+.popup__input:invalid {
+  border-bottom: 1px solid #ff0000;
+}
+
+.popup__input-error_active {
   color: #ff0000;
   font-size: 12px;
   display: block;
   margin-top: 5px;
 }
 
-.cards-popup__input_type_error {
-  border-bottom: 1px solid #ff0000;
-}
-
-.cards-popup__add-button {
+.popup__submit-button {
   max-width: 358px;
   width: 100%;
   height: 50.15px;
@@ -96,11 +96,11 @@
   margin: 48px 0 36.51px;
 }
 
-.cards-popup__add-button:hover {
+.popup__submit-button:hover {
   opacity: 80%;
 }
 
-.cards-popup__add-button_inactive {
+.popup__submit-button_inactive {
   background-color: #ffffff;
   color: #cccccc;
   cursor: not-allowed;
@@ -108,70 +108,26 @@
   border: 1px solid #cccccc;
 }
 
-.cards-popup__opened {
-  display: flex;
-}
-
 @media screen and (max-width: 650px) {
-  .profile-popup__container {
+  .popup__container {
     max-width: 300px;
   }
 
-  .cards-popup__close-button {
+  .popup__close-button {
     top: -55px;
     right: 5px;
   }
 
-  .cards-popup__title,
-  .cards-popup__fieldset {
+  .popup__title,
+  .popup__fieldset {
     max-width: 280px;
   }
+
+  .popup__title {
+    padding: 34px 20px 54px;
+  }
+
+  .popup__submit-button {
+    max-width: 238px;
+  }
 }
-
-@media screen and (max-width: 319px) {
-  .cards-popup__container {
-    max-width: 282px;
-    width: 100%;
-    top: 40%;
-  }
-
-  .cards-popup__close-button {
-    display: block;
-    width: 26px;
-    height: 26px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    position: fixed;
-    top: -45px;
-    right: 5px;
-  }
-
-  .cards-popup__close-button:hover {
-    opacity: 60%;
-  }
-
-  .cards-popup__title {
-    max-width: 238px;
-    width: 100%;
-    padding: 25px 0 76px;
-    font-size: 18px;
-  }
-
-  .cards-popup__fieldset {
-    max-width: 238px;
-    width: 100%;
-    height: 26px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-    padding: 0;
-    margin-bottom: 30px;
-  }
-
-  .cards-popup__add-button {
-    max-width: 238px;
-    width: 100%;
-    height: 46px;
-    font-size: 14px;
-    margin: 48px 0 25px;
-  }
-} */
