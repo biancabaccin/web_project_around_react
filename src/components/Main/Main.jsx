@@ -1,10 +1,32 @@
+import { useState } from "react";
 import avatar from "../../images/profile_image.jpg";
+import Popup from "./components/Popup/Popup";
+import NewCard from "./components/Popup/components/NewCard/NewCard";
+import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
+import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
 
-function Main() {
+export default function Main() {
+  const [popup, setPopup] = useState(null);
+  const newCardPopup = { title: "New card", children: <NewCard /> };
+  const editAvatarPopup = { title: "Edit Avatar", children: <EditAvatar /> };
+  const editProfilePopup = { title: "Edit Profile", children: <EditProfile /> };
+
+  function handleOpenPopup(popup) {
+    setPopup(popup);
+  }
+
+  function handleClosePopup() {
+    setPopup(null);
+  }
+
   return (
     <main className="content">
       <section className="profile">
-        <button className="profile__image-button">
+        <button
+          className="profile__image-button"
+          aria-label="Edit Avatar"
+          onClick={() => handleOpenPopup(editAvatarPopup)}
+        >
           <img
             src={avatar}
             alt="Foto de perfil do usuário"
@@ -14,7 +36,11 @@ function Main() {
 
         <div className="profile__info">
           <h1 className="profile__name">Jacques Cousteau</h1>
-          <button className="profile__edit-button">
+          <button
+            className="profile__edit-button"
+            aria-label="Edit Profile"
+            onClick={() => handleOpenPopup(editProfilePopup)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="10"
@@ -32,7 +58,12 @@ function Main() {
           <p className="profile__description">Explorador</p>
         </div>
 
-        <button className="profile__add-button" type="submit">
+        <button
+          className="profile__add-button"
+          type="submit"
+          aria-label="Add card"
+          onClick={() => handleOpenPopup(newCardPopup)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="22"
@@ -81,8 +112,12 @@ function Main() {
             </div>
           </template>
         </section> */}
+
+      {popup && (
+        <Popup onClose={handleClosePopup} title={popup.title}>
+          {popup.children}
+        </Popup>
+      )}
     </main>
   );
 }
-
-export default Main;
