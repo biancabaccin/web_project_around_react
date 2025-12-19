@@ -1,11 +1,150 @@
+Baccin
+baccin3824
+Disponível
+Yan Leite — 09/12/2024 20:55
+children: <ImagePopup card={props.card} />
+ 
+caiolopes9949 — 09/12/2024 21:48
+Boa noite Yan. É uma dúvida sobre CSS. O roteiro pediu para fazer um menu estilo "sandwich" quando a tela for pequena e quando clicar no menu os links devem aparecer sobre o header. É justamente essa parte de faze-los surgir sobre o header que eu nao sei como faz
+Yan Leite — 09/12/2024 21:52
+Tem alguma imagem? Só para eu ter uma referência
+caiolopes9949 — 09/12/2024 21:52
+Imagem
+isso é o que o roteiro quer
+Yan Leite — 09/12/2024 21:53
+Pra colocar o menu desta forma, você poderia usar o position: fixed
+Ou simplesmente exibir o HTML no mesmo JSX, mas na parte de cima da logo
+Ai você teria uma estrutura condicional, que apareceria quando você clicasse no menu
+caiolopes9949 — 09/12/2024 21:56
+eu criei uma div para esses links. No caso eu colocaria position fixed  nessa div?
+Letícia Goliczevski Medeiros — 09/12/2024 21:58
+a minha dúvida é sobre variáveis de ambiente. Eu dei uma revisada no conteúdo e dizia pra definir a porta do servidor na hora de inicializar o servidor. Por exemplo, NODE_ENV=production node index.js.
+No projeto, eu escrevi o script "start": "PORT=3000 node app.js". Mas aparece a mensagem:
+'PORT' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+Aí não entendi por que não funcionou
+Yan Leite — 09/12/2024 22:03
+production
+develop  dev
+Yan Leite — 09/12/2024 22:29
+<div>
+  <div> 
+     <Around> 
+     <Hamburger> 
+   </div>
+   <div> 
+     <link>
+    <div>
+</div> 
+https://css-tricks.com/almanac/properties/o/order/
+CSS-Tricks
+CSS-Tricks
+Order | CSS-Tricks
+The order property is a sub-property of the Flexible Box Layout module.Flex items are displayed in the same order as they appear in the source document by
+Order | CSS-Tricks
+Claudio Cassimiro — 10/12/2024 14:14
+https://nowellsss.github.io/web_project_around/src/
+Around The U.S.
+Compartilhe todos os momentos maravilhosos que passou a explorar os Estados Unidos
+Lazaro Encinas — 10/12/2024 20:08
+para reiniciar a licao e na nav do reset???
+Gustavo Polonio - Tutor Web — 10/12/2024 20:10
+<div className='popup'>
+      <div className={`popup__content ${!title ? 'popup__content_content_image' : ''}`}>
+        <button aria-label='Close modal' className='popup__close' type='button' onClick={onClose} />
+
+        {title && <h3 className='popup__title'>{title}</h3>}
+
+        {children}
+      </div>
+    </div>
+Yan Leite — 10/12/2024 20:19
+@Lazaro Encinas é neste botão de resetar o workpace, ele vai reiniciar a lição
+Imagem
+xande — 10/12/2024 20:40
+vou voltar para a fila kkkk
+caiolopes9949 — 10/12/2024 20:51
+Boa noite Gustavo. eu preciso colocar os links do menu sobre o header quando o menu hamburguer é pressionado. Mas eu já tentei de tudo e não consigo
+Gustavo Polonio - Tutor Web — 10/12/2024 20:51
+Boa noite, qual sprint é Caio?
+caiolopes9949 — 10/12/2024 20:51
+17
+Gustavo Polonio - Tutor Web — 10/12/2024 20:53
+Só deixa eu acabar aqui e vc compartilha a tela, pode ser?
+caiolopes9949 — 10/12/2024 20:54
+claro
+xande — 10/12/2024 21:07
+deu um erro ao enviar: Make sure not to change the src/vendor/normalize.css file.
+Yan Leite — 10/12/2024 21:08
+@xande tenta utilizar esta versã por gentileza
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
-/* Documento
+/* Document
    ========================================================================== */
 
 /**
- * 1. Corrija a altura da linha em todos os navegadores.
- * 2. Evite ajustes no tamanho da fonte após alterações de orientação no iOS.
+Expandir
+normalize.css
+7 KB
+Deu certo @xande ?
+Yan Leite — 10/12/2024 21:41
+@Gustavo Polonio - Tutor Web
+Késia — 12/12/2024 20:05
+@Yan Leite  fui dar o espaçamento usei o padding left e o right porem a imagem encolheu,, nao sei oque fazer a imagem esta com as medidas de acordo com o figma 
+Imagem
+Aysla Loureiro — 12/12/2024 20:16
+estava somente assistindo, vou saindo pessoal, boa noite
+Yan Leite — 12/12/2024 20:17
+@Késia tente definir o tamanho da imagem
+Késia — 12/12/2024 20:20
+deu certo, mas pode ser diferente do figma?
+Yan Leite — 12/12/2024 20:26
+Estou te ouvindo
+Yan Leite — 14/12/2024 09:18
+@Joao Aloysio Carvalho Neto enquanto eu ajudo a Malhane, fique a vontade para enviar suas perguntas aqui no chat
+https://stackoverflow.com/questions/18749276/css-on-hover-show-another-element
+Stack Overflow
+CSS On hover show another element
+I want to use CSS to show div id='b' when I hover over div id='a', but I cannot figure out how to do it because the div 'a' is inside another div that div 'b' is not in.
+
+<div id='content'>
+...
+Imagem
+Tátila Duarte — 14/12/2024 09:38
+Oii, estou com dificuldades, sem querer apaguei meu projeto do pc e do github, não consigo mais ter acesso ao repositório para clonar.  O segundo print é a pagina que não comsigo mais acessar para recomecar o projeto. 
+Imagem
+Imagem
+Yan Leite — 14/12/2024 09:40
+Consegue explicar como você apagou?
+Tátila Duarte — 14/12/2024 09:42
+Eu apaguei o arquivo do pc e github pq confundi com o projeto 2 que tinha duplicado e no github eu apaguei o repositório que clonei indo nas configurações do github, deu erro na hora de passar pela revisão automatizada. 
+ai apaguei achando que tinha dado push no projeto errado
+mas depois vi que não
+agora não consigo voltar a clonar para recomeçar
+Yan Leite — 14/12/2024 09:46
+Certo, e quais foram os passos que você está fazendo para realizar o clone?
+Tátila Duarte — 14/12/2024 09:47
+o git clone e o endereço do ssh
+o meu endereço
+Yan Leite — 14/12/2024 09:47
+Se você reiniciar a lição na plataforma, ele cria o repositório no github novamente?
+Sim, como o endereço não existe mais ele da erro
+Então precisaria criá-lo novamente
+Tátila Duarte — 14/12/2024 09:47
+sim
+Yan Leite — 14/12/2024 09:48
+então pode ser que se você reiniciar a sprint ou a lição, ele crie novamente
+Tátila Duarte — 14/12/2024 09:48
+mas não consigo pela plataforma para criar novamente
+﻿
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
 html {
@@ -13,11 +152,11 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-/* Seção
+/* Sections
    ========================================================================== */
 
 /**
- * Remova a margem em todos os navegadores.
+ * Remove the margin in all browsers.
  */
 
 body {
@@ -25,7 +164,7 @@ body {
 }
 
 /**
- * Renderize o elemento `main` de forma consistente no IE.
+ * Render the `main` element consistently in IE.
  */
 
 main {
@@ -33,8 +172,8 @@ main {
 }
 
 /**
- * Corrija o tamanho da fonte e margem nos elementos `<h1>` dentro dos contextos `section` e
- * `article` no Chrome, Firefox e Safari.
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
  */
 
 h1 {
@@ -42,12 +181,12 @@ h1 {
   margin: 0.67em 0;
 }
 
-/* Agrupar conteúdo
+/* Grouping content
    ========================================================================== */
 
 /**
- * 1. Adicione o tamanho da caixa correto no Firefox.
- * 2. Mostre o excesso no Edge e no IE.
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
  */
 
 hr {
@@ -57,8 +196,8 @@ hr {
 }
 
 /**
- * 1. Corrija a herança e o dimensionamento do tamanho da fonte em todos os navegadores.
- * 2. Corrija o tamanho ímpar da fonte `em` em todos os navegadores.
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
  */
 
 pre {
@@ -66,20 +205,20 @@ pre {
   font-size: 1em; /* 2 */
 }
 
-/* Semânticas a nível de texto
+/* Text-level semantics
    ========================================================================== */
 
 /**
- * Remova o fundo cinza dos links ativos no IE 10.
+ * Remove the gray background on active links in IE 10.
  */
 
 a {
-  background-color: transparência;
+  background-color: transparent;
 }
 
 /**
- * 1. Remova a borda inferior no Chrome 57-
- * 2. Adicione a decoração de texto correta no Chrome, Edge, IE, Opera e Safari.
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
 abbr[title] {
@@ -89,7 +228,7 @@ abbr[title] {
 }
 
 /**
- * Adicione o peso de fonte correto no Chrome, Edge e Safari.
+ * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
 b,
@@ -98,8 +237,8 @@ strong {
 }
 
 /**
- * 1. Corrija a herança e o dimensionamento do tamanho da fonte em todos os navegadores.
- * 2. Corrija o tamanho ímpar da fonte `em` em todos os navegadores.
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
  */
 
 code,
@@ -110,7 +249,7 @@ samp {
 }
 
 /**
- * Adicione o tamanho de fonte correto em todos os navegadores.
+ * Add the correct font size in all browsers.
  */
 
 small {
@@ -118,8 +257,8 @@ small {
 }
 
 /**
- * Impeça que os elementos `sub` e `sup` afetem a altura da linha em
- * todos os navegadores.
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
  */
 
 sub,
@@ -138,23 +277,23 @@ sup {
   top: -0.5em;
 }
 
-/* Conteúdo incorporado
+/* Embedded content
    ========================================================================== */
 
 /**
- * Remova a borda das imagens dentro dos links no IE 10.
+ * Remove the border on images inside links in IE 10.
  */
 
 img {
   border-style: none;
 }
 
-/* Formulários
+/* Forms
    ========================================================================== */
 
 /**
- * 1. Altere os estilos de fonte em todos os navegadores.
- * 2. Remova a margem no Firefox e Safari.
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
  */
 
 button,
@@ -169,8 +308,8 @@ textarea {
 }
 
 /**
- * Mostre o excesso no IE.
- * 1. Mostre o excesso no Edge.
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
  */
 
 button,
@@ -180,8 +319,8 @@ input {
 }
 
 /**
- * Remova a herança da transformação de texto no Edge, Firefox e IE.
- * 1. Remove a herança de transformação de texto no Firefox.
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
  */
 
 button,
@@ -191,7 +330,7 @@ select {
 }
 
 /**
- * Corrija a incapacidade de estilizar tipos clicáveis no iOS e no Safari.
+ * Correct the inability to style clickable types in iOS and Safari.
  */
 
 button,
@@ -202,7 +341,7 @@ button,
 }
 
 /**
- * Remove a borda interna e o preenchimento no Firefox.
+ * Remove the inner border and padding in Firefox.
  */
 
 button::-moz-focus-inner,
@@ -214,7 +353,7 @@ button::-moz-focus-inner,
 }
 
 /**
- * Restaure os estilos de foco desconfigurados pela regra anterior.
+ * Restore the focus styles unset by the previous rule.
  */
 
 button:-moz-focusring,
@@ -225,7 +364,7 @@ button:-moz-focusring,
 }
 
 /**
- * Corrija o preenchimento no Firefox.
+ * Correct the padding in Firefox.
  */
 
 fieldset {
@@ -233,10 +372,10 @@ fieldset {
 }
 
 /**
- * 1. Corrija a quebra de texto no Edge e no IE.
- * 2. Corrija a herança de cores dos elementos `fieldset` no IE.
- * 3. Remova o preenchimento para que os desenvolvedores não sejam pegos de surpresa quando zerarem
- *     elementos `fieldset` em todos os navegadores.
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
  */
 
 legend {
@@ -249,7 +388,7 @@ legend {
 }
 
 /**
- * Adicione o alinhamento vertical correto no Chrome, Firefox e Opera.
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
 
 progress {
@@ -257,7 +396,7 @@ progress {
 }
 
 /**
- * Remova a barra de rolagem vertical padrão no IE 10+.
+ * Remove the default vertical scrollbar in IE 10+.
  */
 
 textarea {
@@ -265,8 +404,8 @@ textarea {
 }
 
 /**
- * 1. Adicione o tamanho da caixa correto no IE 10.
- * 2. Remova o preenchimento no IE 10.
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
  */
 
 [type="checkbox"],
@@ -276,7 +415,7 @@ textarea {
 }
 
 /**
- * Corrija o estilo do cursor dos botões de aumentar e diminuir no Chrome.
+ * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
 [type="number"]::-webkit-inner-spin-button,
@@ -285,8 +424,8 @@ textarea {
 }
 
 /**
- * 1. Corrija a aparência estranha no Chrome e no Safari.
- * 2. Corrija o estilo do contorno no Safari.
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
  */
 
 [type="search"] {
@@ -295,7 +434,7 @@ textarea {
 }
 
 /**
- * Remova o preenchimento interno no Chrome e Safari no macOS.
+ * Remove the inner padding in Chrome and Safari on macOS.
  */
 
 [type="search"]::-webkit-search-decoration {
@@ -303,8 +442,8 @@ textarea {
 }
 
 /**
- * 1. Corrija a incapacidade de estilizar tipos clicáveis no iOS e no Safari.
- * 2. Altere as propriedades da fonte para `inherit` no Safari.
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
  */
 
 ::-webkit-file-upload-button {
@@ -312,11 +451,11 @@ textarea {
   font: inherit; /* 2 */
 }
 
-/* Interativo
+/* Interactive
    ========================================================================== */
 
 /*
- * Adicione a visualização correta no Edge, IE 10+ e Firefox.
+ * Add the correct display in Edge, IE 10+, and Firefox.
  */
 
 details {
@@ -324,18 +463,18 @@ details {
 }
 
 /*
- * Adicione a visualização correta em todos os navegadores.
+ * Add the correct display in all browsers.
  */
 
 summary {
   display: list-item;
 }
 
-/* Diversos
+/* Misc
    ========================================================================== */
 
 /**
- * Adicione a visualização correta no IE 10+.
+ * Add the correct display in IE 10+.
  */
 
 template {
@@ -343,7 +482,7 @@ template {
 }
 
 /**
- * Adicione a visualização correta no IE 10.
+ * Add the correct display in IE 10.
  */
 
 [hidden] {
