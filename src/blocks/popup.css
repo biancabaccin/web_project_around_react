@@ -131,3 +131,30 @@
     max-width: 238px;
   }
 }
+
+/* ImagePopup */
+
+.popup__container_image {
+  max-width: unset;
+  width: unset;
+  background-color: unset;
+}
+
+.popup__image {
+  max-width: 75vw;
+  width: 100%;
+  max-height: 75vh;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup-card__title {
+  color: white;
+  background-color: transparent;
+  max-width: 816px;
+  width: 100%;
+  padding-top: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+}

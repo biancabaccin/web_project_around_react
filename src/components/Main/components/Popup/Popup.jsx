@@ -2,11 +2,13 @@ export default function Popup(props) {
   const { title, children, onClose } = props;
   return (
     <div className="popup">
-      <div className="popup__container">
+      <div
+        className={`popup__container ${!title ? "popup__container_image" : ""}`}
+      >
         <button
           className="popup__close-button"
-          type="button"
           aria-label="Close modal"
+          type="button"
           onClick={onClose}
         >
           <svg
@@ -21,7 +23,8 @@ export default function Popup(props) {
           </svg>
         </button>
 
-        <h3 className="popup__title">{title}</h3>
+        {title && <h3 className="popup__title">{title}</h3>}
+
         {children}
       </div>
     </div>
