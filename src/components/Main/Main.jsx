@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import avatar from "../../images/profile_image.jpg";
 import Popup from "./components/Popup/Popup";
 import Card from "./components/Card/Card";
@@ -7,6 +7,7 @@ import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
 import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
 import ImagePopup from "./components/Popup/components/ImagePopup/ImagePopup";
 import api from "../../utils/api";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 export default function Main() {
   const [popup, setPopup] = useState(null);
@@ -14,6 +15,7 @@ export default function Main() {
   const editAvatarPopup = { title: "Edit Avatar", children: <EditAvatar /> };
   const editProfilePopup = { title: "Edit Profile", children: <EditProfile /> };
   const [cards, setCards] = useState([]);
+  const currentUser = useContext(CurrentUserContext);
 
   function handleOpenPopup(popup) {
     setPopup(popup);
@@ -43,14 +45,14 @@ export default function Main() {
           onClick={() => handleOpenPopup(editAvatarPopup)}
         >
           <img
-            src={avatar}
+            src={currentUser.avatar}
             alt="Foto de perfil do usuário"
             className="profile__image"
           />
         </button>
 
         <div className="profile__info">
-          <h1 className="profile__name">Jacques Cousteau</h1>
+          <h1 className="profile__name">{currentUser.name}</h1>
           <button
             className="profile__edit-button"
             aria-label="Edit Profile"
@@ -70,7 +72,7 @@ export default function Main() {
             </svg>
           </button>
 
-          <p className="profile__description">Explorador</p>
+          <p className="profile__description">{currentUser.about}</p>
         </div>
 
         <button

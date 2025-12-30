@@ -9,6 +9,10 @@ export default function Card(props) {
     children: <ImagePopup card={props.card} />,
   };
 
+  const cardLikeButtonClassName = `card__like-button ${
+    isLiked ? "card__like-button_active" : ""
+  }`;
+
   return (
     <li className="card">
       <img
@@ -44,7 +48,7 @@ export default function Card(props) {
 
       <div className="card__description">
         <p className="card__title">{name}</p>
-        <button className="card__like-button"></button>
+        <button className={cardLikeButtonClassName}></button>
       </div>
     </li>
   );
