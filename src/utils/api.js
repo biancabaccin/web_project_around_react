@@ -61,6 +61,14 @@ class Api {
     });
   }
 
+  changeLikeCardStatus(cardId, isLiked) {
+    if (isLiked) {
+      return this.likeCard(cardId);
+    } else {
+      return this.unlikeCard(cardId);
+    }
+  }
+
   deleteCard(cardId) {
     return this._request(`/cards/${cardId}`, {
       method: "DELETE",

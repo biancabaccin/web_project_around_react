@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from "react";
-import avatar from "../../images/profile_image.jpg";
 import Popup from "./components/Popup/Popup";
 import Card from "./components/Card/Card";
 import NewCard from "./components/Popup/components/NewCard/NewCard";
@@ -35,6 +34,32 @@ export default function Main() {
         console.error("Error finding cards:", error);
       });
   }, []);
+
+  async function handleCardLike(card) {
+    const isLiked = card.isLiked;
+
+    await api
+      .changeLikeCardStatus(card._id, !isLiked)
+      .then((newCard) => {
+        setCards((state) =>
+          state.map((currentCard) =>
+            currentCard._id === card._id ? newCard : currentCard
+          )
+        );
+      })
+      .catch((error) => console.error(error));
+  }
+
+  async function handleCardDelete(card) {
+    await api
+      .deleteCard(card._id)
+      .then(() => {
+        setCards((state) =>
+          state.filter((currentCard) => currentCard._id !== card._id)
+        );
+      })
+      .catch((error) => console.error(error));
+  }
 
   return (
     <main className="content">
@@ -98,7 +123,13 @@ export default function Main() {
 
       <ul className="cards__list">
         {cards.map((card) => (
-          <Card key={card._id} card={card} onImageClick={handleOpenPopup} />
+          <Card
+            key={card._id}
+            card={card}
+            onImageClick={handleOpenPopup}
+            onCardLike={handleCardLike}
+            onCardDelete={handleCardDelete}
+          />
         ))}
       </ul>
 
