@@ -1,11 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import Popup from "./components/Popup/Popup";
 import Card from "./components/Card/Card";
 import NewCard from "./components/Popup/components/NewCard/NewCard";
 import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
 import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
-import ImagePopup from "./components/Popup/components/ImagePopup/ImagePopup";
-import api from "../../utils/api";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 export default function Main({
