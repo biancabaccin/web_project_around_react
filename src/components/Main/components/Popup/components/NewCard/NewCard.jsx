@@ -6,11 +6,16 @@ export default function NewCard({ onAddPlaceSubmit }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const form = e.target;
 
-    onAddPlaceSubmit({
-      name: name,
-      link: link,
-    });
+    if (form.checkValidity()) {
+      onAddPlaceSubmit({
+        name,
+        link,
+      });
+    } else {
+      form.reportValidity();
+    }
   }
 
   return (
