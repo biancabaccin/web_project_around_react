@@ -3,19 +3,23 @@ import CurrentUserContext from "../../../../../../contexts/CurrentUserContext";
 
 export default function EditAvatar() {
   const avatarRef = useRef();
-  const { onUpdateAvatar } = useContext(CurrentUserContext);
+  const { handleUpdateAvatar } = useContext(CurrentUserContext);
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    onUpdateAvatar({
-      avatar: avatarRef.current.value,
-    });
+    const form = e.target;
+    if (form.checkValidity()) {
+      handleUpdateAvatar({
+        avatar: avatarRef.current.value,
+      });
+    } else {
+      form.reportValidity();
+    }
   }
 
   return (
-    <form className="popup__form" noValidate>
-      <fieldset className="popup__fieldset" onSubmit={handleSubmit}>
+    <form className="popup__form" noValidate onSubmit={handleSubmit}>
+      <fieldset className="popup__fieldset">
         <input
           ref={avatarRef}
           className="popup__input"

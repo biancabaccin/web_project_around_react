@@ -44,7 +44,7 @@ function App() {
   const handleUpdateAvatar = (data) => {
     (async () => {
       await api
-        .setUserAvatar(data)
+        .updateUserAvatar(data)
         .then((newData) => {
           setCurrentUser(newData);
           handleClosePopup();
