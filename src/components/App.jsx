@@ -95,6 +95,7 @@ function App() {
       .addCard(name, link)
       .then((newCard) => {
         setCards([newCard, ...cards]);
+        handleClosePopup();
       })
       .catch((err) => console.log(err));
   }
