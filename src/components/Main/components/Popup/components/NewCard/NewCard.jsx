@@ -1,6 +1,20 @@
-export default function NewCard() {
+import { useState } from "react";
+
+export default function NewCard({ onAddPlaceSubmit }) {
+  const [name, setName] = useState("");
+  const [link, setLink] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    onAddPlaceSubmit({
+      name: name,
+      link: link,
+    });
+  }
+
   return (
-    <form className="popup__form" noValidate>
+    <form className="popup__form" noValidate onSubmit={handleSubmit}>
       <fieldset className="popup__fieldset">
         <input
           className="popup__input"
@@ -11,6 +25,8 @@ export default function NewCard() {
           minLength="2"
           maxLength="30"
           required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <span className="popup__input-error cards-title-error"></span>
       </fieldset>
@@ -23,6 +39,8 @@ export default function NewCard() {
           id="cards-link"
           name="link"
           required
+          value={link}
+          onChange={(e) => setLink(e.target.value)}
         />
         <span className="popup__input-error cards-link-error"></span>
       </fieldset>
