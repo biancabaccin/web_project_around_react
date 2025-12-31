@@ -29,6 +29,16 @@ class Api {
     return this._request("/users/me");
   }
 
+  setUserInfo(userData) {
+    return this._request("/users/me", {
+      method: "PATCH",
+      body: {
+        name: userData.name,
+        about: userData.about,
+      },
+    });
+  }
+
   updateUserInfo(userData) {
     return this._request("/users/me", {
       method: "PATCH",

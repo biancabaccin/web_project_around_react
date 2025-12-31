@@ -8,21 +8,12 @@ import ImagePopup from "./components/Popup/components/ImagePopup/ImagePopup";
 import api from "../../utils/api";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-export default function Main() {
-  const [popup, setPopup] = useState(null);
+export default function Main({ onOpenPopup, onClosePopup, popup }) {
   const newCardPopup = { title: "New card", children: <NewCard /> };
   const editAvatarPopup = { title: "Edit Avatar", children: <EditAvatar /> };
   const editProfilePopup = { title: "Edit Profile", children: <EditProfile /> };
   const [cards, setCards] = useState([]);
-  const currentUser = useContext(CurrentUserContext);
-
-  function handleOpenPopup(popup) {
-    setPopup(popup);
-  }
-
-  function handleClosePopup() {
-    setPopup(null);
-  }
+  const { currentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
     api
@@ -67,7 +58,7 @@ export default function Main() {
         <button
           className="profile__image-button"
           aria-label="Edit Avatar"
-          onClick={() => handleOpenPopup(editAvatarPopup)}
+          onClick={() => onOpenPopup(editAvatarPopup)}
         >
           <img
             src={currentUser.avatar}
@@ -81,7 +72,7 @@ export default function Main() {
           <button
             className="profile__edit-button"
             aria-label="Edit Profile"
-            onClick={() => handleOpenPopup(editProfilePopup)}
+            onClick={() => onOpenPopup(editProfilePopup)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +95,7 @@ export default function Main() {
           className="profile__add-button"
           type="submit"
           aria-label="Add card"
-          onClick={() => handleOpenPopup(newCardPopup)}
+          onClick={() => onOpenPopup(newCardPopup)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +117,7 @@ export default function Main() {
           <Card
             key={card._id}
             card={card}
-            onImageClick={handleOpenPopup}
+            onImageClick={onOpenPopup}
             onCardLike={handleCardLike}
             onCardDelete={handleCardDelete}
           />
@@ -134,7 +125,7 @@ export default function Main() {
       </ul>
 
       {popup && (
-        <Popup onClose={handleClosePopup} title={popup.title}>
+        <Popup onClose={onClosePopup} title={popup.title}>
           {popup.children}
         </Popup>
       )}
