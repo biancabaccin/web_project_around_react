@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import CurrentUserContext from "../../../../../../contexts/CurrentUserContext";
 
 export default function EditProfile() {
-  const userContext = useContext(CurrentUserContext);
   const { currentUser, handleUpdateUser } = useContext(CurrentUserContext);
 
   const [name, setName] = useState(currentUser.name);
@@ -18,12 +17,16 @@ export default function EditProfile() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    handleUpdateUser({ name, about: description });
+    const form = event.target;
+    if (form.checkValidity()) {
+      handleUpdateUser({ name, about: description });
+    } else {
+      form.reportValidity();
+    }
   };
 
   return (
-    <form className="popup__form" noValidate onSubmit={handleSubmit}>
+    <form className="popup__form" onSubmit={handleSubmit} noValidate>
       <fieldset className="popup__fieldset">
         <input
           className="popup__input"
