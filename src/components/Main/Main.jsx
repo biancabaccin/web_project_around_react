@@ -14,14 +14,11 @@ export default function Main({
   onCardLike,
   onCardDelete,
   onAddPlaceSubmit,
+  isLoadingAddCard,
 }) {
-  const newCardPopup = {
-    title: "New card",
-    children: <NewCard onAddPlaceSubmit={onAddPlaceSubmit} />,
-  };
+  const { currentUser } = useContext(CurrentUserContext);
   const editAvatarPopup = { title: "Edit Avatar", children: <EditAvatar /> };
   const editProfilePopup = { title: "Edit Profile", children: <EditProfile /> };
-  const { currentUser } = useContext(CurrentUserContext);
 
   return (
     <main className="content">
@@ -66,7 +63,17 @@ export default function Main({
           className="profile__add-button"
           type="submit"
           aria-label="Add card"
-          onClick={() => onOpenPopup(newCardPopup)}
+          onClick={() =>
+            onOpenPopup({
+              title: "New card",
+              children: (
+                <NewCard
+                  onAddPlaceSubmit={onAddPlaceSubmit}
+                  isLoading={isLoadingAddCard}
+                />
+              ),
+            })
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

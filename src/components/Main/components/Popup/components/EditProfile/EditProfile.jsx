@@ -2,7 +2,8 @@ import { useState, useContext } from "react";
 import CurrentUserContext from "../../../../../../contexts/CurrentUserContext";
 
 export default function EditProfile() {
-  const { currentUser, handleUpdateUser } = useContext(CurrentUserContext);
+  const { currentUser, handleUpdateUser, isLoadingUserInfo } =
+    useContext(CurrentUserContext);
 
   const [name, setName] = useState(currentUser.name);
   const [description, setDescription] = useState(currentUser.about);
@@ -59,8 +60,12 @@ export default function EditProfile() {
         <span className="popup__error about-error"></span>
       </fieldset>
 
-      <button className="popup__submit-button" type="submit">
-        Salvar
+      <button
+        className="popup__submit-button"
+        type="submit"
+        disabled={isLoadingUserInfo}
+      >
+        {isLoadingUserInfo ? "Salvando..." : "Salvar"}
       </button>
     </form>
   );

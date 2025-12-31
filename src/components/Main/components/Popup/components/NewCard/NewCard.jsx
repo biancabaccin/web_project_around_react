@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function NewCard({ onAddPlaceSubmit }) {
+export default function NewCard({ onAddPlaceSubmit, isLoading }) {
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
 
@@ -50,8 +50,12 @@ export default function NewCard({ onAddPlaceSubmit }) {
         <span className="popup__input-error cards-link-error"></span>
       </fieldset>
 
-      <button className="popup__submit-button" type="submit">
-        Criar
+      <button
+        className="popup__submit-button"
+        type="submit"
+        disabled={isLoading}
+      >
+        {isLoading ? "Salvando..." : "Criar"}
       </button>
     </form>
   );

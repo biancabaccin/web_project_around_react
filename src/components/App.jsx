@@ -10,6 +10,10 @@ function App() {
   const [popup, setPopup] = useState(null);
   const [cards, setCards] = useState([]);
 
+  const [isLoadingUserInfo, setIsLoadingUserInfo] = useState(false);
+  const [isLoadingAvatar, setIsLoadingAvatar] = useState(false);
+  const [isLoadingAddCard, setIsLoadingAddCard] = useState(false);
+
   useEffect(() => {
     api
       .getUserInfo()
@@ -29,28 +33,32 @@ function App() {
     setPopup(null);
   }
 
-  const handleUpdateUser = (data) => {
-    (async () => {
-      await api
-        .setUserInfo(data)
-        .then((newData) => {
-          setCurrentUser(newData);
-          handleClosePopup();
-        })
-        .catch((error) => console.error(error));
-    })();
+  const handleUpdateUser = async (data) => {
+    setIsLoadingUserInfo(true);
+
+    try {
+      const newData = await api.setUserInfo(data);
+      setCurrentUser(newData);
+      handleClosePopup();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoadingUserInfo(false);
+    }
   };
 
-  const handleUpdateAvatar = (data) => {
-    (async () => {
-      await api
-        .updateUserAvatar(data)
-        .then((newData) => {
-          setCurrentUser(newData);
-          handleClosePopup();
-        })
-        .catch((error) => console.error(error));
-    })();
+  const handleUpdateAvatar = async (data) => {
+    setIsLoadingAvatar(true);
+
+    try {
+      const newData = await api.updateUserAvatar(data);
+      setCurrentUser(newData);
+      handleClosePopup();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoadingAvatar(false);
+    }
   };
 
   useEffect(() => {
@@ -90,19 +98,30 @@ function App() {
       .catch((error) => console.error(error));
   }
 
-  function handleAddPlaceSubmit(name, link) {
+  function handleAddPlaceSubmit({ name, link }) {
+    setIsLoadingAddCard(true);
+
     api
-      .addCard(name, link)
+      .addCard({ name, link })
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        setCards((state) => [newCard, ...state]);
         handleClosePopup();
       })
-      .catch((err) => console.log(err));
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setIsLoadingAddCard(false);
+      });
   }
 
   return (
     <CurrentUserContext.Provider
-      value={{ currentUser, handleUpdateUser, handleUpdateAvatar }}
+      value={{
+        currentUser,
+        handleUpdateUser,
+        handleUpdateAvatar,
+        isLoadingUserInfo,
+        isLoadingAvatar,
+      }}
     >
       <div className="page">
         <Header />
@@ -114,6 +133,7 @@ function App() {
           onCardLike={handleCardLike}
           onCardDelete={handleCardDelete}
           onAddPlaceSubmit={handleAddPlaceSubmit}
+          isLoadingAddCard={isLoadingAddCard}
         />
         <Footer />
       </div>

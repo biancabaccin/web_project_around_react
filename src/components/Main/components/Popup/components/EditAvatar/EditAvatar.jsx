@@ -3,7 +3,8 @@ import CurrentUserContext from "../../../../../../contexts/CurrentUserContext";
 
 export default function EditAvatar() {
   const avatarRef = useRef();
-  const { handleUpdateAvatar } = useContext(CurrentUserContext);
+  const { handleUpdateAvatar, isLoadingAvatar } =
+    useContext(CurrentUserContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,8 +33,12 @@ export default function EditAvatar() {
         <span className="popup__input-error photo-url-error"></span>
       </fieldset>
 
-      <button className="popup__submit-button" type="submit">
-        Salvar
+      <button
+        className="popup__submit-button"
+        type="submit"
+        disabled={isLoadingAvatar}
+      >
+        {isLoadingAvatar ? "Salvando..." : "Salvar"}
       </button>
     </form>
   );
