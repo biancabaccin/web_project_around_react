@@ -22,6 +22,7 @@ function App() {
       })
       .catch((error) => {
         console.error("Error finding user data:", error);
+        toast.error("Error finding user data:");
       });
   }, []);
 
@@ -69,6 +70,7 @@ function App() {
       })
       .catch((error) => {
         console.error("Error finding cards:", error);
+        toast.error("Error finding cards:");
       });
   }, []);
 
